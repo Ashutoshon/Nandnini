@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You ❤️</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="stars"></canvas>
+
+<!-- PASSWORD -->
+<div class="screen active" id="lockScreen">
+  <h2>Enter Password 🔐</h2>
+  <input type="password" id="password" placeholder="Write your first name❤️">
+  <button onclick="checkPassword()">Unlock💖</button>
+  <p id="error"></p>
+</div>
+
+<!-- INTRO -->
+<div class="screen" id="screen1">
+  <h1>Hey <span id="herName"></span> 🥺❤️</h1>
+  <p>I made something for you Beautiful</p>
+  <button onclick="nextScreen(2)">Tap here 💫</button>
+</div>
+
+<!-- MESSAGE -->
+<div class="screen" id="screen2">
+  <h2>Just for you 💌</h2>
+  <button onclick="revealMessage()">Reveal ❤️</button>
+  <p id="hiddenMsg"></p>
+  <button onclick="nextScreen(3)">Next ➡️</button>
+</div>
+
+<!-- STORY -->
+<div class="screen" id="screen3">
+  <h3>Our Story</h3>
+  <button onclick="Our Story"> Click here </button>
+  <p id="story"></p>
+  <button onclick="nextScreen(4)">Next ➡️</button>
+</div>
+
+<!-- CHAT -->
+<div class="screen" id="screen4">
+  <h2>Us 💬❤️</h2>
+  <div class="chat-box" id="chatBox"></div>
+  <button onclick="loadChat()">Click here to Start Chat 💬</button>
+  <button onclick="nextScreen(5)">Next ➡️</button>
+</div>
+
+<!-- FINAL -->
+<div class="screen" id="screen5">
+  <img src="photo.jpg" class="photo">
+  
+  <h2>Since we met ⏳❤️</h2>
+  <p id="counter"></p>
+
+  <button onclick="playMusic()">Play Our Song 🎵</button>
+  <button onclick="playVoice()">Hear Me 🥺🎤</button>
+
+  <h3>Where it all started at Thane Railway station 📍</h3>
+  <iframe 
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.200426301203!2d72.97289267407986!3d19.18644638204103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b920aa9481a1%3A0xa48d60147b709fed!2sThane%20Railway%20Station%2C%20Thane%20West%2C%20Thane%2C%20Maharashtra%20400602!5e0!3m2!1sen!2sin!4v1774696158429!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+  
+  </iframe>
+ 
+   <button onclick="nextScreen(6)">Next Page 📍</button>
+  
+
+
+  <audio id="music" src="https://drive.google.com/uc?export=download&id=1lhSF4z93hbDG1XkyL8RZldeZiXsbq0I4" loop></audio>
+  <audio id="voice" src="voice.mp3"></audio>
+</div>
+  <div
+       <h2>Will you stay forever? 💍❤️</h2>
+  <button onclick="loveResponse()">Yes, always 😘</button>
+  </div>
+<audio id="bgMusic" src="https://drive.google.com/uc?export=download&id=1lhSF4z93hbDG1XkyL8RZldeZiXsbq0I4" loop></audio>
+
+<script src="script.js"></script>
+
+
+</body>
+</html>
