@@ -6,34 +6,29 @@ body {
   overflow: hidden;
 }
 
-/* Sky blue base background */
 #stars {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: #87CEEB;
-  z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #87CEEB; /* sky blue */
+    z-index: -1;
 }
 
 /* Screens */
 .screen {
   display: none;
   height: 100vh;
-  width: 100vw;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   padding: 20px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 .active {
   display: flex;
-  animation: fadeIn 1s ease;
+  animation: fadeIn 1.5s ease;
 }
 
 @keyframes fadeIn {
@@ -41,14 +36,13 @@ body {
   to { opacity: 1; }
 }
 
-/* Inputs */
+/* UI */
 input {
   padding: 20px;
   border-radius: 20px;
   border: none;
 }
 
-/* Buttons */
 button {
   padding: 12px 20px;
   margin: 10px;
@@ -56,7 +50,13 @@ button {
   border: none;
   background: white;
   color: #ff4b5c;
-  font-size: 18px;
+  font-size: 16px;
+}
+
+.photo {
+  width: 220px;
+  border-radius: 20px;
+  margin: 20px 0;
 }
 
 /* Chat */
@@ -70,9 +70,22 @@ button {
   border-radius: 10px;
 }
 
-.msg { padding: 10px; margin: 8px; border-radius: 10px; max-width: 70%; }
-.me  { background: #ff4b5c; align-self: flex-end; }
-.her { background: #444; align-self: flex-start; }
+.msg {
+  padding: 10px;
+  margin: 8px;
+  border-radius: 10px;
+  max-width: 70%;
+}
+
+.me {
+  background: #ff4b5c;
+  align-self: flex-end;
+}
+
+.her {
+  background: #444;
+  align-self: flex-start;
+}
 
 /* Confetti */
 .confetti {
@@ -84,26 +97,12 @@ button {
   animation: fall 3s linear infinite;
 }
 
-@keyframes fall { to { transform: translateY(100vh); } }
-
-/* Scroll for screen 5 */
 #screen5 {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
 
-/* ==== Floating Play/Pause Button ==== */
-#toggleMusic {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  padding: 14px 20px;
-  background: #ff4b5c;
-  color: white;
-  font-size: 16px;
-  border-radius: 30px;
-  border: none;
-  cursor: pointer;
-  z-index: 9999;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+
+@keyframes fall {
+  to { transform: translateY(100vh); }
 }
