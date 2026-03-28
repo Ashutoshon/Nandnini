@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For You ❤️</title>
-style.css
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For You ❤️</title>
+
+  <!-- Correct CSS link -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -20,16 +22,14 @@ style.css
 </div>
 
 <!-- INTRO -->
-<div class="screen" id="screen1"
-style="background-image:url('bg1.jpg');">
+<div class="screen" id="screen1" style="background-image: url('bg1.jpg');">
   <h1>Hey <span id="herName"></span> 🥺❤️</h1>
   <p>I made something for you...</p>
   <button onclick="nextScreen(2)">Next 💫</button>
 </div>
 
 <!-- MESSAGE -->
-<div class="screen" id="screen2"
-style="background-image:url('bg2.jpg');">
+<div class="screen" id="screen2" style="background-image: url('bg2.jpg');">
   <h2>Just for you 💌</h2>
   <button onclick="revealMessage()">Reveal ❤️</button>
   <p id="hiddenMsg"></p>
@@ -37,8 +37,7 @@ style="background-image:url('bg2.jpg');">
 </div>
 
 <!-- STORY -->
-<div class="screen" id="screen3"
-style="background-image:url('bg3.jpg');">
+<div class="screen" id="screen3" style="background-image: url('bg3.jpg');">
   <h2>Our Story 📖✨</h2>
   <button onclick="typeStory()">Start Story</button>
   <p id="story"></p>
@@ -46,8 +45,7 @@ style="background-image:url('bg3.jpg');">
 </div>
 
 <!-- CHAT -->
-<div class="screen" id="screen4"
-style="background-image:url('bg4.jpg');">
+<div class="screen" id="screen4" style="background-image: url('bg4.jpg');">
   <h2>Us 💬❤️</h2>
   <div class="chat-box" id="chatBox"></div>
   <button onclick="loadChat()">Start Chat 💬</button>
@@ -55,9 +53,7 @@ style="background-image:url('bg4.jpg');">
 </div>
 
 <!-- FINAL -->
-<div class="screen" id="screen5"
-style="background-image:url('bg5.jpg');">
-
+<div class="screen" id="screen5" style="background-image: url('bg5.jpg');">
   <h2>Since we met ⏳❤️</h2>
   <p id="counter"></p>
 
@@ -65,27 +61,35 @@ style="background-image:url('bg5.jpg');">
 
   <h3>Where it all started 📍</h3>
 
-  https://maps.google.com/maps?q=Thane%20Railway%20Station&z=15&output=embed
+  <!-- Correct embedded Google Maps iframe -->
+  <iframe 
+      src="https://maps.google.com/maps?q=Thane%20Railway%20Station&z=15&output=embed"
+      width="90%" 
+      height="250" 
+      style="border:0; border-radius: 15px;" 
+      loading="lazy">
+  </iframe>
 
   <button onclick="nextScreen(6)">Next Page ➡️</button>
 </div>
 
 <!-- FOREVER SCREEN -->
-<div class="screen" id="screen6"
-style="background-image:url('bg6.jpg');">
+<div class="screen" id="screen6" style="background-image: url('bg6.jpg');">
   <h2>Will you stay forever? 💍❤️</h2>
   <button onclick="loveResponse()">Yes, Always 😘</button>
 </div>
 
 <!-- Background MUSIC -->
-https://raw.githubusercontent.com/YOURNAME/YOURREPO/main/YOURSONG.mp3
+<audio id="bgMusic" src="https://raw.githubusercontent.com/YOURNAME/YOURREPO/main/YOURSONG.mp3" loop></audio>
 
-<!-- Voice -->
-https://raw.githubusercontent.com/YOURNAME/YOURREPO/main/YOURVOICE.m4a
+<!-- Voice Message -->
+<audio id="voiceMsg" src="https://raw.githubusercontent.com/YOURNAME/YOURREPO/main/YOURVOICE.m4a"></audio>
 
 <!-- Floating Toggle Button -->
 <button id="toggleMusic" onclick="toggleMusic()">Pause ⏸️</button>
 
-script.jsscript>
+<!-- Corrected Script tag -->
+<script src="script.js"></script>
+
 </body>
 </html>
