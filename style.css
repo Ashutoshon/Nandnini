@@ -4,28 +4,35 @@ body {
   color: blue;
   text-align: center;
   overflow: hidden;
+  background: black; /* fallback */
 }
 
+/* Stars Canvas */
 #stars {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: #87CEEB; /* sky blue */
-    z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
+  z-index: -1;
 }
 
-/* Screens */
+/* General Screen Style */
 .screen {
   display: none;
   height: 100vh;
+  width: 100%;
+  position: relative;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   padding: 20px;
+  background-size: cover;
+  background-position: center;
 }
 
+/* Fade animation */
 .active {
   display: flex;
   animation: fadeIn 1.5s ease;
@@ -36,7 +43,47 @@ body {
   to { opacity: 1; }
 }
 
-/* UI */
+/* DARK OVERLAY for readability */
+.screen::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.35);
+  z-index: -1;
+}
+
+/* DIFFERENT BACKGROUND IMAGES */
+#screen1 {
+  background-image: url("https://github.com/Ashutoshon/Nandnini/raw/main/IMG_2798.JPG");
+}
+
+#screen2 {
+  background-image: url("image2.jpg");
+}
+
+#screen3 {
+  background-image: url("image3.jpg");
+}
+
+#screen4 {
+  background-image: url("image4.jpg");
+}
+
+#screen5 {
+  background-image: url("image5.jpg");
+  overflow-y: auto;
+}
+
+#screen6 {
+  background-image: url("image6.jpg");
+}
+
+
+
+/* UI Styling */
 input {
   padding: 20px;
   border-radius: 20px;
@@ -59,7 +106,8 @@ button {
   margin: 20px 0;
 }
 
-/* Chat */
+
+/* CHAT BOX */
 .chat-box {
   width: 90%;
   max-width: 400px;
@@ -87,7 +135,8 @@ button {
   align-self: flex-start;
 }
 
-/* Confetti */
+
+/* CONFETTI */
 .confetti {
   position: fixed;
   width: 10px;
@@ -96,12 +145,6 @@ button {
   top: 0;
   animation: fall 3s linear infinite;
 }
-
-#screen5 {
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
 
 @keyframes fall {
   to { transform: translateY(100vh); }
