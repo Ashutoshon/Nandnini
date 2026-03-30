@@ -4,7 +4,7 @@ body {
   color: blue;
   text-align: center;
   overflow: hidden;
-  background: black; /* fallback */
+  background: Pink; /* fallback */
 }
 
 /* Stars Canvas */
