@@ -1,27 +1,26 @@
-// ===== CUSTOMIZE THIS =====
+// ===== SETTINGS =====
 const correctPassword = "N";
 const girlName = "Nandini Singh";
 const startDate = new Date("2026-03-04");
-// ==========================
+// ====================
 
 // Set name
 document.getElementById("herName").innerText = girlName;
 
-// Password
+// PASSWORD + FIXED MUSIC AUTOPLAY
 function checkPassword() {
   const input = document.getElementById("password").value;
-
-  function startMusic() {
-    const bg = document.getElementById("bgMusic");
-    bg.volume = 1.0;
-    bg.play().catch(() => {
-      console.log("Autoplay blocked, will start on user interaction.");
-    });
-  }
+  const bg = document.getElementById("bgMusic");
 
   if (input === correctPassword) {
     nextScreen(1);
-    startMusic(); // Start background music
+
+    // FIX: Start muted → then unmute (browser allows this)
+    bg.muted = true;
+    bg.play().then(() => {
+      setTimeout(() => (bg.muted = false), 500);
+    });
+
   } else {
     document.getElementById("error").innerText = "Wrong password 😢";
   }
@@ -33,12 +32,12 @@ function nextScreen(num) {
   document.getElementById("screen" + num).classList.add("active");
 }
 
-// Message typing
+// Reveal message
 function revealMessage() {
   const msg = `I love you sooo much ${girlName} 
-  You are so Smart,So polite🥺❤️`;
+You are so Smart, So polite🥺❤️`;
   let i = 0;
-  let el = document.getElementById("hiddenMsg");
+  const el = document.getElementById("hiddenMsg");
   el.innerHTML = "";
 
   function type() {
@@ -51,12 +50,11 @@ function revealMessage() {
   type();
 }
 
-// AI STORY ❤️
-const storyText = `It all started like a normal day... 🌸
+// Story
+const storyText = `
+It all started like a normal day... 🌸
 
 But then I met you, ${girlName} 🥺❤️
-
-That moment... everything changed ✨
 
 Your smile 😊, your voice 🎶, your presence 💖
 slowly became my favorite part of every day.
@@ -70,10 +68,6 @@ I never want to lose you ❤️`;
 
 let sIndex = 0;
 
-document.getElementById("screen3").addEventListener("click", () => {
-  if (sIndex === 0) typeStory();
-});
-
 function typeStory() {
   if (sIndex < storyText.length) {
     document.getElementById("story").innerHTML += storyText.charAt(sIndex);
@@ -82,7 +76,7 @@ function typeStory() {
   }
 }
 
-// Chat 💬
+// Chat
 const chatMessages = [
   { text: "Hey ❤️", type: "me" },
   { text: "Hi 😊", type: "her" },
@@ -101,16 +95,11 @@ function loadChat() {
       div.className = "msg " + msg.type;
       div.innerText = msg.text;
       box.appendChild(div);
-      box.scrollTop = box.scrollHeight;
     }, i * 1000);
   });
 }
 
-// Music & voice
-function playMusic() {
-  document.getElementById("music").play();
-}
-
+// Voice
 function playVoice() {
   document.getElementById("voice").play();
 }
@@ -124,9 +113,10 @@ function updateCounter() {
 }
 setInterval(updateCounter, 1000);
 
-// Love button 💍
+// Love confetti
 function loveResponse() {
   alert("Forever with you ❤️🥺");
+
   for (let i = 0; i < 30; i++) {
     let conf = document.createElement("div");
     conf.className = "confetti";
@@ -136,7 +126,7 @@ function loveResponse() {
   }
 }
 
-// Stars 🌌
+// Stars
 const canvas = document.getElementById("stars");
 const ctx = canvas.getContext("2d");
 
